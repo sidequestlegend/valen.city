@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valencia Nights & XR | Your Gateway to Valencia's Best</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section:nth-child(even) {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .section:nth-child(odd) {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23FF6B35" width="1200" height="600"/><circle cx="300" cy="150" r="80" fill="%23FFE66D" opacity="0.7"/><circle cx="900" cy="300" r="120" fill="%23FF006E" opacity="0.5"/><circle cx="600" cy="450" r="90" fill="%234ECDC4" opacity="0.6"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .content {
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #FF6B35, #FF006E);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(45deg, #25D366, #128C7E);
+        }
+
+        .telegram-btn {
+            background: linear-gradient(45deg, #0088CC, #005577);
+        }
+
+        .instagram-btn {
+            background: linear-gradient(45deg, #E4405F, #833AB4);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        .emoji {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .content p {
+                font-size: 1rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="section hero">
+        <div class="container">
+            <div class="content">
+                <h1>Valencia Nights & XR</h1>
+                <p class="subtitle">Your Gateway to Valencia's Vibrant Nightlife, Events & Extended Reality</p>
+                <a href="#nightlife" class="cta-button">Explore Valencia 🌃</a>
+            </div>
+            <div class="scroll-indicator">
+                <span style="font-size: 2rem;">↓</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valencia Nightlife -->
+    <section id="nightlife" class="section">
+        <div class="container">
+            <div class="content">
+                <h2>Valencia Nightlife 🌙</h2>
+                <p>Discover Valencia's electrifying nightlife scene! From rooftop bars overlooking the Mediterranean to underground clubs pumping the latest beats, Valencia comes alive after dark.</p>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <span class="emoji">🍸</span>
+                        <h3>Cocktail Bars</h3>
+                        <p>Craft cocktails in stylish settings</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="emoji">💃</span>
+                        <h3>Dance Clubs</h3>
+                        <p>Electronic, Latin, and international beats</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="emoji">🎵</span>
+                        <h3>Live Music</h3>
+                        <p>Jazz, flamenco, and indie venues</p>
+                    </div>
+                </div>
+                <a href="https://chat.whatsapp.com/YOUR_NIGHTLIFE_GROUP_LINK" class="cta-button whatsapp-btn">Join Nightlife Group 🎉</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valencia Events -->
+    <section id="events" class="section">
+        <div class="container">
+            <div class="content">
+                <h2>Valencia Events 🎪</h2>
+                <p>Stay connected with Valencia's dynamic events scene. From Las Fallas to music festivals, art exhibitions to food markets - never miss what's happening in the city.</p>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <span class="emoji">🎭</span>
+                        <h3>Cultural Events</h3>
+                        <p>Festivals, exhibitions, theater</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="emoji">🎵</span>
+                        <h3>Concerts & Shows</h3>
+                        <p>International and local artists</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="emoji">🍕</span>
+                        <h3>Food & Markets</h3>
+                        <p>Pop-ups, markets, culinary events</p>
+                    </div>
+                </div>
+                <a href="https://chat.whatsapp.com/YOUR_EVENTS_GROUP_LINK" class="cta-button whatsapp-btn">Join Events Group 📅</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- XR Technology -->
+    <section id="xr" class="section">
+        <div class="container">
+            <div class="content">
+                <h2>Extended Reality (XR) 🥽</h2>
+                <p>Dive into the future with Valencia's growing XR community. Virtual Reality, Augmented Reality, and Mixed Reality experiences that blend the digital and physical worlds.</p>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <span class="emoji">🎮</span>
+                        <h3>VR Gaming</h3>
+                        <p>Immersive gaming experiences</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="emoji">🎨</span>
+                        <h3>AR Art</h3>
+                        <p>Digital art installations</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="emoji">🚀</span>
+                        <h3>Tech Meetups</h3>
+                        <p>XR developers and enthusiasts</p>
+                    </div>
+                </div>
+                <a href="https://chat.whatsapp.com/YOUR_XR_GROUP_LINK" class="cta-button whatsapp-btn">Join XR Group 🚀</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect Section -->
+    <section id="connect" class="section">
+        <div class="container">
+            <div class="content">
+                <h2>Stay Connected 📱</h2>
+                <p>Join our community and never miss out on Valencia's best experiences. Connect with like-minded people and discover hidden gems in the city.</p>
+                <div style="margin-top: 40px;">
+                    <a href="https://chat.whatsapp.com/YOUR_MAIN_GROUP_LINK" class="cta-button whatsapp-btn">Main Valencia Group</a>
+                    <a href="https://t.me/YOUR_TELEGRAM_GROUP" class="cta-button telegram-btn">Telegram Channel</a>
+                    <a href="https://instagram.com/YOUR_INSTAGRAM" class="cta-button instagram-btn">Follow on IG</a>
+                </div>
+                <p style="margin-top: 30px; opacity: 0.8;">
+                    🌟 Made with love for Valencia's vibrant community 🌟
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
